@@ -5,22 +5,22 @@ const { nanoid } = require("nanoid");
 const contactsPath = path.join(process.cwd(), "db", "contacts.json");
 
 async function listContacts() {
-  // ...твій код. Повертає масив контактів.
-  const contactsList = await fs.readFile(contactsPath); // коли виконуємо JSON.parse UTF-8 можна не писати
+  //  Повертає масив контактів.
+  const contactsList = await fs.readFile(contactsPath);
   return JSON.parse(contactsList);
 }
 
 async function getContactById(contactId) {
-  // ...твій код. Повертає об'єкт контакту з таким id. Повертає null, якщо контакт з таким id не знайдений.
-  const contacts = await listContacts();
-  const resultFindContactsById = contacts.find(
+  // Повертає об'єкт контакту з таким id. Повертає null, якщо контакт з таким id не знайдений.
+  const contactsList = await listContacts();
+  const resultFindContactsById = contactsList.find(
     (contact) => contact.id === contactId
   );
   return resultFindContactsById || null;
 }
 
 async function removeContact(contactId) {
-  // ...твій код. Повертає об'єкт видаленого контакту. Повертає null, якщо контакт з таким id не знайдений.
+  //  Повертає об'єкт видаленого контакту. Повертає null, якщо контакт з таким id не знайдений.
   const contactsList = await listContacts();
   const index = contactsList.findIndex((contact) => contact.id === contactId);
   if (index === -1) {
@@ -32,7 +32,7 @@ async function removeContact(contactId) {
 }
 
 async function addContact(name, email, phone) {
-  // ...твій код. Повертає об'єкт доданого контакту. Повертає null, якщо контакт з таким id не знайдений.
+  //  Повертає об'єкт доданого контакту. Повертає null, якщо контакт з таким id не знайдений.
   if (!name && !email && !phone) {
     return null;
   }

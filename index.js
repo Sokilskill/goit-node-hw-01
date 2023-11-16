@@ -25,29 +25,3 @@ async function invokeAction({ action, id, name, email, phone }) {
 }
 
 invokeAction(argv);
-
-// const watchContacts = async () => {
-//   const contactList = await contacts.listContacts();
-//   console.log("contacts", contactList);
-// };
-// // watchContacts();
-
-// const getById = async (id) => {
-//   const contact = await contacts.getContactById(id);
-//   console.log("Contact Found", contact);
-// };
-// // getById("AeHIrLTr6JkxGE6SN-0Rw");
-// // getById("23");
-
-// const add = async (name, email, phone) => {
-//   const addContacts = await contacts.addContact(name, email, phone);
-//   return await console.log("addContacts", addContacts);
-// };
-// // add("Luis", "luis@gmail.com", "932-99-32"); // в nodemon  зациклює виконання функції
-// // add();
-
-// const deletebyId = async (id) => {
-//   const contact = await contacts.removeContact(id);
-//   return console.log("contact", contact);
-// };
-// // deletebyId("5dvHsiwDBr-xmHfONZaEA");
